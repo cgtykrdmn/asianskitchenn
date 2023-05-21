@@ -32,7 +32,7 @@ const menu = [
     category: "China",
     price: 5.99,
     img:
-      "",
+      "https://thewoksoflife.com/wp-content/uploads/2014/11/dan-dan-noodles-12.jpg",
     desc: `Dan dan noodle, serving with green onion `,
   },
   {
@@ -90,17 +90,16 @@ let buttonS = ["all", "japan", "china", "korea"]
 buttonS.map((btnS) => {
 
   let btn = document.createElement("button")
-  btn.setAttribute("id",`${btnS}`)
-  btn.classList.add("btn", "btn-outline-warning")
+  btn.classList.add("btn", "btn-outline-warning",btnS)
   btn.innerText=btnS.toUpperCase()
   containerDOM.appendChild(btn)
 
 }) 
 
-btnAll = document.querySelector(".all")
-btnJapan = document.querySelector(".japan")
-btnChina = document.querySelector(".china")
-btnKorea = document.querySelector(".korea")
+const btnAll = document.querySelector(".all")
+const btnJapan = document.querySelector(".japan")
+const btnChina = document.querySelector(".china")
+const btnKorea = document.querySelector(".korea")
 
 let foodSection = document.querySelector(".section-center")
 
@@ -139,10 +138,14 @@ const showMenu = (foodCategory) => {
 
 window.addEventListener("DOMContentLoaded", () => showMenu("All"))
 
-document.getElementById("all").addEventListener("onclick",()=> showMenu("All"))
-document.getElementById("japan").addEventListener("onclick",()=> showMenu("Japan"))
-document.getElementById("china").addEventListener("onclick",()=> showMenu("China"))
-document.getElementById("korea").addEventListener("onclick",()=> showMenu("Korea"))
+btnAll.addEventListener("click", () => showMenu("All"))
+btnJapan.addEventListener("click", () => showMenu("Japan"))
+btnChina.addEventListener("click", () => showMenu("China"))
+btnKorea.addEventListener("click", () => showMenu("Korea"))
+
+
+
+
 
 
 
